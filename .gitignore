@@ -1,3 +1,4 @@
+.DS_Store
 .project
 .gradle
 .history
@@ -6,3 +7,11 @@ target
 .settings/
 **/bin
 **/.classpath
+**/.project
+**/.gradle
+**/.history
+**/build
+**/target
+**/.settings/
+**/.DS_Store/
+**/.DS_Store
