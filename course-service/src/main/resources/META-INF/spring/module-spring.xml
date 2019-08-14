@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<beans
+	default-destroy-method="destroy"
+	default-init-method="afterPropertiesSet"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean class="uk.ac.uea.www.course.service.impl.FooLocalServiceImpl" id="uk.ac.uea.www.course.service.FooLocalService" />
+	<bean class="uk.ac.uea.www.course.service.impl.FooServiceImpl" id="uk.ac.uea.www.course.service.FooService" />
+	<bean class="uk.ac.uea.www.course.service.persistence.impl.FooPersistenceImpl" id="uk.ac.uea.www.course.service.persistence.FooPersistence" parent="basePersistence" />
+</beans>

@@ -1,0 +1,42 @@
+buildscript {
+	dependencies {
+		classpath group: "biz.aQute.bnd", name: "biz.aQute.bnd.gradle", version: "4.2.0"
+		classpath (group: "com.liferay", name: "com.liferay.gradle.plugins", version: "4.0.5") {
+			exclude group: "biz.aQute.bnd", module: "biz.aQute.bnd.gradle"
+		}
+	}
+
+	repositories {
+		mavenLocal();
+		maven {
+			url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+		}
+	}
+}
+
+subprojects {
+	apply plugin: "com.liferay.plugin"
+	apply plugin: 'maven'
+	apply plugin: 'maven-publish'
+
+	repositories {
+		mavenLocal();
+		maven {
+			url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+		}
+	}
+	publishing {
+
+		publications {
+
+			projectPublication(MavenPublication) {
+				from components.java
+			}
+
+		}
+
+		repositories {
+			mavenLocal();
+		}
+	}
+}
